@@ -58,10 +58,26 @@ exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
+// Send all the details of the user
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.user.id)
     res.status(200).json({
         success: true,
         user
+    })
+})
+
+// Update user profiles
+exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
+    // if have to update one thing, we will send reset as defaults from frontend
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email
+    }
+
+    // we will add cloudinary later
+    const user = await User.findByIdAndUpdate(req.user.id, newUserData)
+    res.status(200).json({
+        success: true
     })
 })
