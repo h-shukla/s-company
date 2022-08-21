@@ -102,3 +102,30 @@ exports.getSingleUser = catchAsyncErrors(async (req, res, next) => {
         user
     })
 })
+
+// Update user Role --> Admin
+exports.updateUserRole = catchAsyncErrors(async (req, res, next) => {
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role
+    }
+
+    const user = await User.findByIdAndUpdate(req.params.id, newUserData)
+
+    res.status(200).json({
+        success: true
+    })
+})
+
+// Delete user --> Admin
+exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
+    const user = User.findByIdAndDelete(req.params.id)
+    if (!user) {
+        return next(new ErrorHandler(`User with id ${req.params.id} does't exist`))
+    }
+    // we will remove cloudinary later
+    res.status(200).json({
+        success: true
+    })
+})

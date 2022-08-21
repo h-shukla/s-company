@@ -1,11 +1,14 @@
 const express = require('express')
-const { registerUser, loginUser, logoutUser, getUserDetails, updateProfile, getAllUsers, getSingleUser } = require('../controllers/userController')
+const { registerUser, loginUser, logoutUser, getUserDetails, updateProfile, getAllUsers, getSingleUser, updateUserRole, deleteUser } = require('../controllers/userController')
 const router = express.Router()
 const { isAuthenticatedUser, authorizedRoles } = require('../middlewares/auth')
 
 // Admin routes
 router.route('/admin/users').get(isAuthenticatedUser, authorizedRoles('admin'), getAllUsers)
-router.route('/admin/user/:id').get(isAuthenticatedUser, authorizedRoles('admin'), getSingleUser)
+router.route('/admin/user/:id')
+    .get(isAuthenticatedUser, authorizedRoles('admin'), getSingleUser)
+    .put(isAuthenticatedUser, authorizedRoles('admin'), updateUserRole)
+    .delete(isAuthenticatedUser, authorizedRoles('admin'), deleteUser)
 
 // Non admin routes
 router.route('/register').post(registerUser)
