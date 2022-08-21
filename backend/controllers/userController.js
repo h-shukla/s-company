@@ -126,6 +126,7 @@ exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
     }
     // we will remove cloudinary later
     res.status(200).json({
-        success: true
+        success: true,
+        message: 'user deleted successfully'
     })
 })
