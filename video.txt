@@ -1,2 +1,2 @@
-https://youtu.be/AN3t-OmdyKA?t=10045
-admin routes setup complete
+https://youtu.be/AN3t-OmdyKA?t=11605
+nodemailer not working
