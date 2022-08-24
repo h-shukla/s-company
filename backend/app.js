@@ -10,6 +10,7 @@ app.use(cookieParser())
 // Route definitions
 app.use('/api/v1', require('./routes/productRoutes'))
 app.use('/api/v1', require('./routes/userRoutes'))
+app.use('/api/v1', require('./routes/orderRoutes'))
 
 // middleware for error
 app.use(error)
