@@ -17,20 +17,20 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 
 // Get all products for listing --> Non Admin
 exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
-    const resultsPerPage = 5
-    const productCount = await Product.countDocuments()
+    const resultsPerPage = 8
+    const productsCount = await Product.countDocuments()
     const apiFeatures = new ApiFeatures(Product.find(), req.query)
         .search()
         .filter()
         .pagination(resultsPerPage)
-    const product = await apiFeatures.query
-    if (!product) {
+    const products = await apiFeatures.query
+    if (!products) {
         return next(new ErrorHandler)
     }
     res.status(200).json({
         success: true,
-        productCount,
-        product
+        productsCount,
+        products
     })
 })
 
