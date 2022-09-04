@@ -1,28 +1,34 @@
-import React from 'react'
-import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import WebFont from 'webfontloader'
-import Header from './components/layout/Header/Header.js';
-import Footer from './components/layout/Footer/Footer.js';
-import Home from './components/Home/Home.js'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './components/Home'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import About from './components/About'
+import Contact from './components/Contact'
+import Login from './components/Login'
+import Register from './components/Register'
+import Products from './components/Products'
 
 function App() {
-  // all react hooks must be called inside a function
-  React.useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ['Roboto', 'Droid Sans', 'Chilanka']
-      }
-    })
-  }, [])
-
   return (
-    <Router>
-      <Header />
-      <Route exact path='/' component={Home} />
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/products" element={<Products />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
-    </Router>
-  )
+    </div>
+  );
 }
 
 export default App;
