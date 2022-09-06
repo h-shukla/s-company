@@ -31,11 +31,13 @@ const Products = () => {
   const onClickNextPage = () => {
     setPage(page + 1);
     setLoading(true)
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }
 
   const onPreviousClick = () => {
     setPage(page - 1)
     setLoading(true)
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }
 
   return (
