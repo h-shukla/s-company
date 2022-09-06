@@ -23,7 +23,7 @@ const Products = () => {
         setLoading(false)
       })()
     }
-    const pages = Math.ceil(productsCount / 10)
+    const pages = Math.ceil(productsCount / 8)
     setTotalPages(pages)
     // eslint-disable-next-line
   }, [loading])
@@ -41,7 +41,7 @@ const Products = () => {
   }
 
   return (
-    <div className='container d-flex flex-wrap center'>
+    <div className='container d-flex flex-wrap center product-container'>
       {!loading && <p>{page}/{totalPages} pages</p>}
       <div className='container d-flex flex-wrap m-2 center'>
         {!loading &&
