@@ -25,6 +25,7 @@ const Products = () => {
     }
     const pages = Math.ceil(productsCount / 10)
     setTotalPages(pages)
+    // eslint-disable-next-line
   }, [loading])
 
   const onClickNextPage = () => {
