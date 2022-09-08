@@ -5,9 +5,11 @@
   - [x] Add basic **Contact** page
   - [x] Add basic **About** page
   - [x] Add *Cart* icon to right hand of the navbar
-  - [ ] Add *Register* page and implement API calls
-  - [ ] Add *Login* page and implement API calls
-  - [ ] Add *Cart* component and make it functional
+  - [x] Add *Register* page
+  - [x] Add *Login* page
+  - [ ] Implement *Register* API calls
+  - [ ] Implement *Login* API calls
+  - [ ] Make *Cart* component functional
   - [ ] Add payout feature
 
 

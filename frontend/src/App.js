@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <div className="container">
+        <div className="container d-flex center p-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

@@ -1,7 +1,7 @@
 .hero {
-  height: 80vh;
-  margin-top: 3rem;
-  max-width: 100%;
+  min-height: 90vh;
+  min-width: 90vw;
+  margin-top: 3vh;
   background-image: url('../img/hero.jpg');
   display: flex;
   flex-direction: column;
