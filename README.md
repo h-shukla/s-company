@@ -10,6 +10,12 @@
   - [ ] Implement *Register* API calls
   - [ ] Implement *Login* API calls
   - [ ] Make *Cart* component functional
+  - [ ] Implement *Admin* page
+    - [ ] Create Product
+    - [ ] Delete Product
+    - [ ] View orders
+    - [ ] View Earnings
+    - [ ] Update Product status
   - [ ] Add payout feature
 
 
