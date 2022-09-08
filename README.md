@@ -4,7 +4,7 @@
   - [x] Add pagination feature to the **Products** page
   - [x] Add basic **Contact** page
   - [x] Add basic **About** page
-  - [ ] Add *Cart* icon to right hand of the navbar
+  - [x] Add *Cart* icon to right hand of the navbar
   - [ ] Add *Register* page and implement API calls
   - [ ] Add *Login* page and implement API calls
   - [ ] Add *Cart* component and make it functional

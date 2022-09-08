@@ -1,0 +1,11 @@
+.cart {
+  max-height: 5vh;
+  width: auto;
+  position: sticky;
+  margin-right: 3vw;
+}
+
+.cart-link {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
+import '../styles/Navbar.css'
+import cartIcon from '../img/shopping-cart.png'
 const Navbar = () => {
   return (
     <>
@@ -25,6 +26,9 @@ const Navbar = () => {
                 <Link className="nav-link" to='/login'>Login</Link>
               </li>
             </ul>
+            <Link to='/cart' className='cart-link'>
+              <img src={cartIcon} alt="" className="cart" />
+            </Link>
           </div>
         </div>
       </nav>
