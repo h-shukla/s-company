@@ -7,7 +7,7 @@
   - [x] Add *Cart* icon to right hand of the navbar
   - [x] Add *Register* page
   - [x] Add *Login* page
-  - [ ] Implement *Register* API calls
+  - [x] Implement *Register* API calls
   - [ ] Implement *Login* API calls
   - [ ] Make *Cart* component functional
   - [ ] Implement *Admin* page
