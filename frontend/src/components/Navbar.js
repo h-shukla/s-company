@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import '../styles/Navbar.css'
 import cartIcon from '../img/shopping-cart.png'
+
 const Navbar = () => {
+  const token = localStorage.token
+  console.log(token)
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -22,9 +25,11 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to='/contact'>Contact</Link>
               </li>
-              <li className="nav-item">
+              {token ? <li className="nav-item">
+                <Link className="nav-link" to='/profile'>Profile</Link>
+              </li> : <li className="nav-item">
                 <Link className="nav-link" to='/login'>Login</Link>
-              </li>
+              </li>}
             </ul>
             <Link to='/cart' className='cart-link'>
               <img src={cartIcon} alt="" className="cart" />

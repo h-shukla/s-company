@@ -19,7 +19,6 @@ const Register = () => {
       },
       body: JSON.stringify({ name, email, password })
     })
-
     return response.json()
   }
 
@@ -32,6 +31,7 @@ const Register = () => {
       const res = await postData(name, email, password)
       if (res.success === true) {
         setIsregistrationSuccessfull(true)
+        localStorage.setItem('token', res.token)
       }
     } else {
       alert('Passwords do not match')

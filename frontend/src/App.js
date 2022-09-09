@@ -13,6 +13,7 @@ import Register from './components/Register'
 import Products from './components/Products'
 import Cart from "./components/Cart";
 import './App.css'
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/products" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile />}></Route>
           </Routes>
         </div>
       </BrowserRouter>
