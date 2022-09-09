@@ -8,7 +8,10 @@
   - [x] Add *Register* page
   - [x] Add *Login* page
   - [x] Implement *Register* API calls
-  - [ ] Implement *Login* API calls
+  - [x] Implement *Login* API calls
+  - [x] Implement logout functionality
+  - [ ] Implement *Profile* page and display user information if logged in
+  - [ ] Add search feature to the products page
   - [ ] Make *Cart* component functional
   - [ ] Implement *Admin* page
     - [ ] Create Product

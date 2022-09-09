@@ -46,7 +46,7 @@ const Products = () => {
       <div className='container d-flex flex-wrap m-2 center'>
         {!loading &&
           products.map((product) => (
-            <div className="card m-3" style={{ width: '18rem' }}>
+            <div className="card m-3" style={{ width: '18rem' }} key={product._id}>
               <img src={product.image} className="card-img-top rounded" alt="" />
               <div className="card-body">
                 <h5 className="card-title" >{product.name}</h5>
