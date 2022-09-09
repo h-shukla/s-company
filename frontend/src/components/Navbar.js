@@ -5,7 +5,6 @@ import cartIcon from '../img/shopping-cart.png'
 
 const Navbar = () => {
   const token = localStorage.token
-  console.log(token)
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
