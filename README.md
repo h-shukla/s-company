@@ -17,6 +17,7 @@
     - [ ] View Earnings
     - [ ] Update Product status
   - [ ] Add payout feature
+    - [ ] Look into stripe api or razorpay to integrate the feature
 
 
 # TODO - Backend
