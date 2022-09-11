@@ -2,6 +2,7 @@ const catchAsyncErrors = require('../middlewares/catchAsyncErrors')
 const User = require('../models/userModel')
 const ErrorHandler = require('../utils/errorHandler')
 const sendToken = require('../utils/jwtToken')
+const jwt = require('jsonwebtoken')
 
 // Register a user
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
@@ -71,10 +72,10 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
         email: req.body.email
     }
 
-    // we will add cloudinary later
     const user = await User.findByIdAndUpdate(req.user.id, newUserData)
     res.status(200).json({
-        success: true
+        success: true,
+        user
     })
 })
 

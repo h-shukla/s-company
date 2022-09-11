@@ -10,9 +10,11 @@
   - [x] Implement *Register* API calls
   - [x] Implement *Login* API calls
   - [x] Implement logout functionality
-  - [ ] Implement *Profile* page and display user information if logged in
+  - [x] Implement *Profile* page and display user information if logged in
+  - [x] Implement edit profile functionality
   - [ ] Add search feature to the products page
   - [ ] Make *Cart* component functional
+  - [ ] Make Ordering frontend to API calls
   - [ ] Implement *Admin* page
     - [ ] Create Product
     - [ ] Delete Product

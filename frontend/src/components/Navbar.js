@@ -27,8 +27,8 @@ const Navbar = () => {
                 <Link className="nav-link" to='/profile'>Profile</Link>
               </li>
             </ul>
-            <Link to='/cart' className='cart-link'>
-              <img src={cartIcon} alt="" className="cart" />
+            <Link to='/cart' className='cart-link '>
+              <img src={cartIcon} alt="" className='cart' />
             </Link>
           </div>
         </div>
