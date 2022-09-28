@@ -14,7 +14,7 @@
   - [x] Implement edit profile functionality
   - [ ] Add search feature to the products page
   - [ ] Make *Cart* component functional
-  - [ ] Make Ordering frontend to API calls
+  - [ ] Make Order api integration
   - [ ] Implement *Admin* page
     - [ ] Create Product
     - [ ] Delete Product
@@ -29,3 +29,10 @@
   - [ ] Look into payments system
   - [ ] Implement payment api endpoints
   - [ ] Test the payment endpoints
+
+
+# Urgent todo
+- [x] create normal user
+- [x] check if the login part works
+- [ ] create admin user
+- [ ] create some products

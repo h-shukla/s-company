@@ -25,8 +25,13 @@ const Login = () => {
     const password = passRef.current.value
     const res = await postData(email, password)
     if (res.success === true) {
-      localStorage.setItem('token', res.token)
-      navigate('/products')
+      if (res.user.role === 'admin') {
+        localStorage.setItem('token', res.token)
+        navigate('/admin')
+      } else {
+        localStorage.setItem('token', res.token)
+        navigate('/products')
+      }
     } else {
       alert('Invalid cridentials')
       e.target.reset()

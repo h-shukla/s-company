@@ -5,6 +5,7 @@ import axios from 'axios'
 const Profile = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
+  const [admin, setAdmin] = useState(false)
 
   const getUserDetails = async () => {
     const res = await axios.get('http://localhost:5000/api/v1/me', {
@@ -13,6 +14,9 @@ const Profile = () => {
       }
     })
     const user = res.data.user
+    if (user.role === 'admin') {
+      setAdmin(true)
+    }
     setUser(user)
   }
 
@@ -25,6 +29,7 @@ const Profile = () => {
       }
     }
   }, [isLoggedIn])
+
   const navigate = useNavigate()
   const handleOnClick = () => {
     localStorage.clear()
@@ -40,14 +45,19 @@ const Profile = () => {
     navigate('/editprofile')
   }
 
+  const handleAdmin = () => {
+    navigate('/admin')
+  }
+
   if (isLoggedIn) {
     return (
       <div>
-        <h3>User detials</h3>
+        <h3>User details</h3>
         <p><b>Name</b>: {user.name}</p>
         <p><b>Email</b>: {user.email}</p>
         <button className='btn btn-primary mb-2' onClick={handleProfileEdit}>Edit Profile</button> <br />
-        <button onClick={handleOnClick} className='btn btn-primary'>logout</button>
+        <button onClick={handleOnClick} className='btn btn-primary'>logout</button> <br /> <br />
+        <button className='btn btn-primary mb-2' style={admin ? { "display": "block" } : { "display": "none" }} onClick={handleAdmin}>Admin Dashboard</button>
       </div>
     )
   } else {

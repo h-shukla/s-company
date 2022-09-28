@@ -23,10 +23,6 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    category: {
-        type: String,
-        required: [true, 'Please enter product category'],
-    },
     stock: {
         type: Number,
         required: [true, 'Please enter number of stocks'],
@@ -55,11 +51,6 @@ const productSchema = new mongoose.Schema({
             type: String
         }
     }],
-    user: {
-        type: mongoose.Schema.ObjectId,
-        ref: 'User',
-        required: true
-    },
     createdAt: {
         type: Date,
         default: Date.now

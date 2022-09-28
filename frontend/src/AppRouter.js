@@ -14,6 +14,10 @@ import Products from './components/Products'
 import Cart from "./components/Cart"
 import Profile from "./components/Profile"
 import EditProfile from './components/EditProfile'
+import AdminPage from './components/AdminPage'
+import CreateProduct from "./components/CreateProduct";
+import ManageProducts from "./components/ManageProducts";
+import Orders from "./components/Orders";
 
 const AppRouter = () => {
   return (
@@ -31,6 +35,10 @@ const AppRouter = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
             <Route path='/editprofile' element={<EditProfile />} />
+            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/admin/createproduct" element={<CreateProduct />} />
+            <Route path="/admin/manageproduct" element={<ManageProducts />} />
+            <Route path="/admin/orders" element={<Orders />} />
           </Routes>
         </div>
       </BrowserRouter>

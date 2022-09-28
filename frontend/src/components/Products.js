@@ -70,7 +70,7 @@ const Products = () => {
         {page < totalPages && <button type="button" className="btn btn-primary m-1 " onClick={onClickNextPage}>Load more</button>}
         {page > 1 && <button type='button' className='btn btn-secondary m-1' onClick={onPreviousClick}>Previous page</button>}
       </div>
-    </div>
+    </div >
   )
 }
 
