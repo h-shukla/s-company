@@ -12,15 +12,14 @@
   - [x] Implement logout functionality
   - [x] Implement *Profile* page and display user information if logged in
   - [x] Implement edit profile functionality
-  - [ ] Add search feature to the products page
+  - [x] Add search feature to the products page
   - [ ] Make *Cart* component functional
   - [ ] Make Order api integration
-  - [ ] Implement *Admin* page
-    - [ ] Create Product
-    - [ ] Delete Product
+  - [x] Implement *Admin* page
+    - [x] Create Product
+    - [ ] manage Products
     - [ ] View orders
-    - [ ] View Earnings
-    - [ ] Update Product status
+    - [ ] Update order status
   - [ ] Add payout feature
     - [ ] Look into stripe api or razorpay to integrate the feature
 
@@ -29,10 +28,3 @@
   - [ ] Look into payments system
   - [ ] Implement payment api endpoints
   - [ ] Test the payment endpoints
-
-
-# Urgent todo
-- [x] create normal user
-- [x] check if the login part works
-- [ ] create admin user
-- [ ] create some products
