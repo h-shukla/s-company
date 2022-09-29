@@ -13,9 +13,10 @@
   - [x] Implement *Profile* page and display user information if logged in
   - [x] Implement edit profile functionality
   - [x] Add search feature to the products page
+  - [ ] Add context api for cart
   - [ ] Make *Cart* component functional
   - [ ] Make Order api integration
-  - [x] Implement *Admin* page
+  - [x] Implement **Admin** page
     - [x] Create Product
     - [x] manage Products
     - [ ] View orders
