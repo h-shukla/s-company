@@ -17,7 +17,7 @@
   - [ ] Make Order api integration
   - [x] Implement *Admin* page
     - [x] Create Product
-    - [ ] manage Products
+    - [x] manage Products
     - [ ] View orders
     - [ ] Update order status
   - [ ] Add payout feature
