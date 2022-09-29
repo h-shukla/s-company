@@ -6,7 +6,8 @@ const CreateProduct = () => {
     description: '',
     price: 0,
     image: '',
-    stock: 0
+    stock: 0,
+    category: ''
   });
 
   const postData = async (product) => {
@@ -17,7 +18,7 @@ const CreateProduct = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(product)
-    })
+    });
     return response.json()
   }
 
@@ -31,7 +32,8 @@ const CreateProduct = () => {
         description: '',
         price: 0,
         image: '',
-        stock: 0
+        stock: 0,
+        category: ''
       })
     } else {
       alert('some error occurred')
@@ -63,6 +65,10 @@ const CreateProduct = () => {
       <div className="mb-3">
         <label htmlFor="productstock" className="form-label">Stock</label>
         <input type="number" className="form-control" name="stock" placeholder='Number of stock' value={product.stock} onChange={handleOnChange} />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="productcategory" className="form-label">Category</label>
+        <input type="text" className="form-control" name="category" placeholder='Category' value={product.category} onChange={handleOnChange} />
       </div>
       <button type="submit" className="btn btn-primary" onClick={handleOnSubmit}>Submit</button>
     </form>

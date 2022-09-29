@@ -1,6 +1,6 @@
-import React from 'react'
-import '../styles/Home.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import '../styles/Home.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
         <button className="btn btn-danger"><Link to='/products' className='view-products'>View products</Link></button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
