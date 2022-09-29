@@ -10,12 +10,18 @@ const AdminPage = () => {
   const [totalPages, setTotalPages] = useState(1)
   const [loading, setLoading] = useState(true)
 
+  const getProducts = async () => {
+    const prod = await axios.get(`http://localhost:5000/api/v1/products?page=${page}`, null)
+    return prod
+  }
+
   useEffect(() => {
     if (loading) {
       (async () => {
-        const prod = await axios.get(`http://localhost:5000/api/v1/products?page=${page}`, null)
+        const prod = await getProducts()
         setProducts(prod.data.products)
         setProductsCount(prod.data.productsCount)
+        setLoading(false)
       })()
     }
     const pages = Math.ceil(productsCount / 8)
@@ -39,6 +45,28 @@ const AdminPage = () => {
     localStorage.setItem('updateid', id)
   }
 
+  const deleteProduct = async (id) => {
+    if (id !== null) {
+      const res = await fetch(`http://localhost:5000/api/v1/admin/products/${id}`, {
+        method: 'DELETE',
+        mode: 'cors'
+      });
+      return res.json()
+    }
+  }
+
+  const handleDeleteProduct = async (id) => {
+    const res = await deleteProduct(id);
+    if (res.success === true) {
+      alert('Product deleted successfully');
+      const prod = await getProducts()
+      setProducts(prod.data.products)
+      setProductsCount(prod.data.productsCount)
+    } else {
+      alert('some error occurred')
+    }
+  }
+
   return (
     <div>
       <h3 style={{ marginTop: '3rem' }}>Admin Dashboard</h3>
@@ -56,7 +84,8 @@ const AdminPage = () => {
               <div className="card-body">
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text">{product.description}</p>
-                <Link to="/admin/updateproduct" className="btn btn-danger" onClick={() => handleUpdate(product._id)}>Update Product</Link>
+                <Link to="/admin/updateproduct" className="btn btn-success mb-2" onClick={() => handleUpdate(product._id)}>Update Product</Link>
+                <button to="/admin/updateproduct" className="btn btn-danger" onClick={() => handleDeleteProduct(product._id)}>Delete Product</button>
               </div>
             </div>
           ))
