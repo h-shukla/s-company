@@ -1,74 +1,74 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Profile = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [user, setUser] = useState({})
-  const [admin, setAdmin] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState({});
+    const [admin, setAdmin] = useState(false);
 
-  const getUserDetails = async () => {
-    const res = await axios.get('http://localhost:5000/api/v1/me', {
-      params: {
-        token: localStorage.getItem('token')
-      }
-    })
-    const user = res.data.user
-    if (user.role === 'admin') {
-      setAdmin(true)
+    const getUserDetails = async () => {
+        const res = await axios.get('http://localhost:5000/api/v1/me', {
+            params: {
+                token: localStorage.getItem('token')
+            }
+        });
+        const user = res.data.user;
+        if (user.role === 'admin') {
+            setAdmin(true);
+        }
+        setUser(user);
+    };
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsLoggedIn(true);
+            if (isLoggedIn) {
+                getUserDetails();
+            }
+        }
+    }, [isLoggedIn]);
+
+    const navigate = useNavigate();
+    const handleOnClick = () => {
+        localStorage.clear();
+        alert('Logged out successfully');
+        navigate('/');
+    };
+
+    const handleLoginOnClick = () => {
+        navigate('/login');
+    };
+
+    const handleProfileEdit = () => {
+        navigate('/editprofile');
+    };
+
+    const handleAdmin = () => {
+        navigate('/admin');
+    };
+
+    if (isLoggedIn) {
+        return (
+            <div>
+              <h3>User details</h3>
+              <p><b>Name</b>: {user.name}</p>
+              <p><b>Email</b>: {user.email}</p>
+              <button className='btn btn-primary mb-2' onClick={handleProfileEdit}>Edit Profile</button> <br />
+              <button onClick={handleOnClick} className='btn btn-primary'>logout</button> <br /> <br />
+              <button className='btn btn-primary mb-2' style={admin ? { "display": "block" } : { "display": "none" }} onClick={handleAdmin}>Admin Dashboard</button>
+            </div>
+        );
+    } else {
+        return (
+            <div className="container mt-4">
+              <h5>You are not logged in!!</h5>
+              <p>Go to login page to either login or register</p>
+              <button className='btn btn-primary' onClick={handleLoginOnClick}>Go to Login</button>
+            </div>
+        );
     }
-    setUser(user)
-  }
+};
 
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    if (token) {
-      setIsLoggedIn(true)
-      if (isLoggedIn) {
-        getUserDetails()
-      }
-    }
-  }, [isLoggedIn])
-
-  const navigate = useNavigate()
-  const handleOnClick = () => {
-    localStorage.clear()
-    alert('Logged out successfully')
-    navigate('/')
-  }
-
-  const handleLoginOnClick = () => {
-    navigate('/login')
-  }
-
-  const handleProfileEdit = () => {
-    navigate('/editprofile')
-  }
-
-  const handleAdmin = () => {
-    navigate('/admin')
-  }
-
-  if (isLoggedIn) {
-    return (
-      <div>
-        <h3>User details</h3>
-        <p><b>Name</b>: {user.name}</p>
-        <p><b>Email</b>: {user.email}</p>
-        <button className='btn btn-primary mb-2' onClick={handleProfileEdit}>Edit Profile</button> <br />
-        <button onClick={handleOnClick} className='btn btn-primary'>logout</button> <br /> <br />
-        <button className='btn btn-primary mb-2' style={admin ? { "display": "block" } : { "display": "none" }} onClick={handleAdmin}>Admin Dashboard</button>
-      </div>
-    )
-  } else {
-    return (
-      <div className="container mt-4">
-        <h5>You are not logged in!!</h5>
-        <p>Go to login page to either login or register</p>
-        <button className='btn btn-primary' onClick={handleLoginOnClick}>Go to Login</button>
-      </div>
-    )
-  }
-}
-
-export default Profile
+export default Profile;

@@ -1,29 +1,29 @@
 .hero {
-  min-height: 90vh;
-  min-width: 90vw;
-  margin-top: 3vh;
-  background-image: url('../img/hero.jpg');
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    min-height: 90vh;
+    min-width: 90vw;
+    margin-top: 3vh;
+    background-image: url('../img/hero.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero button {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .hero h2 {
-  color: #f4f4f4;
-  margin-bottom: 2rem;
+    color: #f4f4f4;
+    margin-bottom: 2rem;
 }
 
 .view-products {
-  text-decoration: none;
-  color: #f4f4f4;
+    text-decoration: none;
+    color: #f4f4f4;
 }
 
 .view-products:hover {
-  text-decoration: none;
-  color: #f4f4f4;
+    text-decoration: none;
+    color: #f4f4f4;
 }

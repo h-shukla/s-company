@@ -1,23 +1,23 @@
 .footer {
-  height: 12vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 .footer div {
-  max-width: 40vw;
-  margin-top: 3rem;
+    max-width: 40vw;
+    margin-top: 3rem;
 }
 
 .footer .b a {
-  text-decoration: none;
-  color: red;
+    text-decoration: none;
+    color: red;
 }
 
 .footer .b a:hover {
-  color: #333;
-  font-size: large;
+    color: #333;
+    font-size: large;
 }
