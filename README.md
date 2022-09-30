@@ -24,7 +24,6 @@
   - [ ] Add payout feature
     - [ ] Look into stripe api or razorpay to integrate the feature
 
-
 # TODO - Backend
   - [ ] Look into payments system
   - [ ] Implement payment api endpoints

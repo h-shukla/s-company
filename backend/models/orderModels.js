@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
     shippingInfo: {
@@ -69,6 +69,6 @@ const orderSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     }
-})
+});
 
-module.exports = mongoose.model('Order', orderSchema)
+module.exports = mongoose.model('Order', orderSchema);
