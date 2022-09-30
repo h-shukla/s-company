@@ -12,16 +12,16 @@ const router = express.Router();
 
 // admin routes
 router.route('/admin/products/new').post(createProduct);
-router.route('/admin/products/:id');
-    .put(updateProduct);
+router.route('/admin/products/:id')
+    .put(updateProduct)
     .delete(deleteProduct);
 
 // Non admin routes;
 router.route('/products').get(getAllProducts);
 router.route('/products/:id').get(getProductDetails);
 router.route('/review').put(isAuthenticatedUser, createProductReview);
-router.route('/reviews');
-    .get(getProductReviews);
+router.route('/reviews')
+    .get(getProductReviews)
     .delete(isAuthenticatedUser, deleteReview);
 
 module.exports = router;
