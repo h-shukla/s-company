@@ -1,3 +1,19 @@
+# Run
+To run the project you'll need
+- Nodejs
+- Mongodb community server
+- Constant working Internet (for pulling in bootstrap files)
+1. Install backend node packages
+Go in the project folder and run the following command
+`
+npm i && npm start
+`
+2. Install frontend node packages
+Open up another terminal and go inside the frontend folder and run the following command
+`
+npm i && npm start
+`
+
 # TODO - Frontend
   - [x] Create basic landing page
   - [x] Create **Products** page and display products by pulling from API
@@ -14,7 +30,7 @@
   - [x] Implement edit profile functionality
   - [x] Add search feature to the products page
   - [x] Add context api for cart
-        Instead made it by using local storage
+        (Instead made it by using local storage)
   - [x] Make *Cart* component functional
   - [ ] Make Order api integration
   - [x] Implement **Admin** page
