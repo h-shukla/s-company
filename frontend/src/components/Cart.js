@@ -53,8 +53,8 @@ const Cart = () => {
       <div>
         {cart.length !== 0 &&
           <div>
-            <p><b>Total Cost:</b>{getCartCost()}</p>
-            <Link to='/pay' className="btn btn-success">Place an order and Pay</Link>
+            <p><b>Total Cost:</b>&#8377;{getCartCost()}</p>
+            <Link to='/checkout' className="btn btn-success">Checkout</Link>
           </div>
         }
       </div>

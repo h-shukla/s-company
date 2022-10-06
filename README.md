@@ -38,10 +38,4 @@ npm i && npm start
     - [x] manage Products
     - [ ] View orders
     - [ ] Update order status
-  - [ ] Add payout feature
-    - [ ] Look into stripe api or razorpay to integrate the feature
-
-# TODO - Backend
-  - [ ] Look into payments system
-  - [ ] Implement payment api endpoints
-  - [ ] Test the payment endpoints
+  - [ ] Add checkout feature
