@@ -6,7 +6,7 @@ const router = express.Router();
 // Basic routes;
 router.route('/order/new').post(isAuthenticatedUser, newOrder);
 router.route('/order/me').get(isAuthenticatedUser, myOrders);
-router.route('order/:id').get(isAuthenticatedUser, getSingleOrder);
+router.route('/order/:id').delete(isAuthenticatedUser, deleteOrders);
 
 // Admin routes;
 router.route('/admin/orders').get(isAuthenticatedUser, authorizedRoles('admin'), getAllOrders);

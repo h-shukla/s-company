@@ -37,6 +37,10 @@ const Pay = () => {
     return res.data;
   };
 
+  const clearCart = () => {
+    localStorage.removeItem('cart');
+  }
+
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
     const shippingInfo = {
@@ -59,6 +63,7 @@ const Pay = () => {
       alert('Some Error occurred');
     } else {
       alert('Your Order has been placed');
+      clearCart();
       navigate('/profile');
     }
   }

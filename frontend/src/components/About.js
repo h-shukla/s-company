@@ -2,12 +2,12 @@ import React from 'react';
 import '../styles/About.css';
 
 const About = () => {
-    return (
-        <div className="container d-flex flex-column center about-header">
-          <h3 >About us</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In repellendus ex illum cumque, perferendis dolore quidem quis est aut eaque voluptate! Labore, aut asperiores! Labore ducimus harum eveniet, voluptatem modi ad aut? Iure recusandae unde, nulla reiciendis ullam cumque eos neque nisi odit numquam sint vero in iste nobis consectetur nostrum dolore, eum deleniti quam? Necessitatibus incidunt fugiat voluptas laborum iusto explicabo quam aspernatur dignissimos rerum quibusdam assumenda, sequi pariatur. Quae obcaecati impedit cumque facere ipsa culpa, quaerat, in expedita libero fuga illo recusandae. Omnis accusamus velit rerum magni in, doloribus laudantium, temporibus ab esse dolore iure, hic sit!</p>
-        </div>
-    );
+  return (
+    <div className="container d-flex flex-column center about-header">
+      <h3 >About us</h3>
+      <p>At <b>S-company</b> we ensure that the products listed are original and thoroughly tested to avoid any possible fake products that might be found on other sites. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod fuga saepe, repellat odio animi hic possimus provident, quam, natus maiores dolor? Recusandae quod aliquid molestiae optio, dignissimos molestias? Aliquid doloremque repudiandae sit. Vero, quia. Our team personally ensures and quality checks all the products for verification and customer satisfaction is our only goal.</p>
+    </div>
+  );
 };
 
 export default About;

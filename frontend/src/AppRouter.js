@@ -17,9 +17,9 @@ import EditProfile from './components/EditProfile';
 import AdminPage from './components/AdminPage';
 import CreateProduct from "./components/CreateProduct";
 import UpdateProduct from './components/UpdateProduct';
-import Orders from "./components/Orders";
 import Checkout from "./components/Checkout";
 import Pay from "./components/Pay";
+import AdminOrders from "./components/AdminOrders";
 
 const AppRouter = () => {
   return (
@@ -40,7 +40,7 @@ const AppRouter = () => {
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/createproduct" element={<CreateProduct />} />
             <Route path="/admin/updateproduct" element={<UpdateProduct />} />
-            <Route path="/admin/orders" element={<Orders />} />
+            <Route path="/admin/orders" element={<AdminOrders />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/pay" element={<Pay />} />
           </Routes>
