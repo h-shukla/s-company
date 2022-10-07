@@ -41,7 +41,7 @@ Backend was made before adding the project to git so yeah no todo list for backe
   - [x] Implement **Admin** page
     - [x] Create Product
     - [x] manage Products
-    - [ ] View orders
-    - [ ] Update order status
-    - [ ] Delete order
+    - [x] View orders
+    - [x] Update order status
+    - [x] Delete order
   - [x] Add checkout feature

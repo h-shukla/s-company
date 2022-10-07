@@ -82,7 +82,6 @@ const Profile = () => {
         }
     }
 
-
     if (isLoggedIn) {
         return (
             <div className="container mt-4 contact-header">
