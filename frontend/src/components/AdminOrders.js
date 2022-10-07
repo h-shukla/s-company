@@ -31,15 +31,15 @@ const AdminOrders = () => {
   }
 
   const handleRemoveOrder = async (id) => {
-    const res = await axios.delete(`http://localhost:5000/api/v1/admin/order/${id}`, {
+    const res = await axios.delete(`http://localhost:5000/api/v1/order/${id}`, {
       params: {
         token: localStorage.getItem('token')
       }
     });
 
     if (res.data.success === true) {
-      alert('Order Removed heading to products page');
-      navigate('/products');
+      alert('Order Removed heading to profile page');
+      navigate('/profile');
     }
   }
 
