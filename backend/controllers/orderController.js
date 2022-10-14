@@ -63,10 +63,6 @@ exports.updateOrderStatus = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('You have already delivered this order', 400));
     }
 
-    order.orderItems.forEach(async order => {
-        await updateStock(order.product, order.quantity);
-    });
-
     order.orderStatus = req.body.status;
     if (req.body.status === 'Delivered') {
         order.deliveredAt = Date.now();
@@ -79,13 +75,6 @@ exports.updateOrderStatus = catchAsyncErrors(async (req, res, next) => {
         order
     });
 });
-
-async function updateStock(id, quantity) {
-    const product = await Product.findById(id);
-    product.stock -= quantity;
-
-    await product.save();
-};
 
 // Delete orders -- ADMIN
 exports.deleteOrders = catchAsyncErrors(async (req, res, next) => {
